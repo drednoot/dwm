@@ -11,31 +11,23 @@ static const char dmenufont[]       = "monospace:size=10";
 
 static const char *screenshot[] 	={"scrot", "-s", "-p", NULL};
 
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char col_eerie_black[]	= "#262626";
-static const char col_gainsboro[]	= "#E0E0E1";
-static const char col_white[]		= "#FFFFFF";
-static const char col_dodger_blue[]	= "#2191FB";
-static const char col_caroline_blue[]="#5FA8D3";
-static const char col_red[]			= "#FF0000";
-static const char col_blue[]		= "#0000FF";
-static const char col_green[]		= "#00FF00";
-static const char col_yellow[]		= "#FFFF00";
-static const char col_orange[]		= "#FFA500";
-static const char col_purple[]		= "#800080";
-//static const char *colors[][3]      = {
-//	/*               fg         bg         border   */
-//	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-//	[SchemeSel]  = { col_dodger_blue, col_eerie_black,  col_white  },
-//};
+// nord color scheme for the terminal
+static const char col_black[] = "#A3BE8C";
+static const char col_red[] = "#A3BE8C";
+static const char col_green[] = "#A3BE8C";
+static const char col_yellow[] = "#EBCB8B";
+static const char col_blue[] = "#81A1C1";
+static const char col_magenta[] = "#B48EAD";
+static const char col_cyan[] = "#8FBCBB";
+static const char col_white[] = "#ECEFF4";
+
+static const char col_background[] = "#2E3440";
+static const char col_foreground[] = "#D8DEE9";
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gainsboro, col_eerie_black, col_eerie_black },
-	[SchemeSel]  = { col_white, col_caroline_blue,  col_gainsboro  },
+	[SchemeNorm] = { col_white, col_background, col_background },
+	[SchemeSel]  = { col_background, col_white,  col_white  },
 };
 
 /* tagging */
