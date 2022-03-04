@@ -73,8 +73,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 //static const char *dmenucmd[] = { "rofi", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "run", NULL};
 static const char *termcmd[]  = { "scroll", "st", NULL };
-static const char *screenshot[] 	={"scrot", "-s", "-p", NULL};
-static const char *screenshot_fullscreen[] 	={"scrot", "-p", NULL};
+
+static const char *screen_nn[] 	={ "screenshot", NULL};
+static const char *screen_s[] 	={ "screenshot", "s", NULL};
+static const char *screen_f[] 	={ "screenshot", "f", NULL};
+static const char *screen_sf[] 	={ "screenshot", "sf", NULL};
+
 static const char *taskbar_sh[] 	={"taskbar", NULL};
 
 static Key keys[] = {
@@ -107,8 +111,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-	{ 0,							XK_Print,	spawn,		   {.v = screenshot} },
-	{ ShiftMask,					XK_Print,	spawn,		   {.v = screenshot_fullscreen} },
+	{ 0,							XK_Print,	spawn,		   {.v = screen_nn} },
+	{ ShiftMask,					XK_Print,	spawn,		   {.v = screen_s} },
+	{ ControlMask,					XK_Print,	spawn,		   {.v = screen_f} },
+	{ ShiftMask|ControlMask,		XK_Print,	spawn,		   {.v = screen_sf} },
+	{ MODKEY,						XK_p,		spawn,		   {.v = taskbar_sh} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
