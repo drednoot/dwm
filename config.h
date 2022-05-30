@@ -30,8 +30,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       2,       0,           -1 },
+	{ "discord",  NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Rhythmbox",  NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Pavucontrol",  NULL,       NULL,       0,       1,           -1 },
+	{ NULL,  NULL,       "calcurse",       0,       1,           -1 },
+	{ "Qalculate-gtk" ,  NULL,       NULL,       0,       1,           -1 },
+	{ "Transmission-gtk" ,  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -67,7 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "rofi", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "run", NULL};
-static const char *termcmd[]  = { "scroll", "st", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 static const char *screen_nn[] 	={ "screenshot", NULL};
 static const char *screen_s[] 	={ "screenshot", "s", NULL};
